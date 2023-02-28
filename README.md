@@ -13,7 +13,7 @@ We built a number of different models since it is not usually obvious what will 
 
 To give a quick overview of the output of our analysis below you will see the results of the SMOTE oversampling method which had the highest accuracy score of the previous 4 methods.  It did have good precision for low risk (1) results but the precision (pre) and harmonic mean (F1) for high risk (0) was low.
 
-![SMOTE Logistic Regression Results] (Resources/LogisticRegressionResults.png)
+![SMOTE Logistic Regression Results](Resources/LogisticRegressionResults.png)
 
 We went a step further and used two types of decision tree style models on the same dataset, both which by default handle the imbalance using undersampling.
 
@@ -22,7 +22,7 @@ We went a step further and used two types of decision tree style models on the s
 
 Here we can see the output from the Easy Ensemble method which is model that builds off of itself, using the results of the first decision tree to improve the model of the second and so on.  As with the results of the SMOTE method above the results here score well for low risk.  However, it scores higher across the board including high risk as well.
 
-![Easy Ensemble Results] (Resources/EasyEnsembleResults.png)
+![Easy Ensemble Results](Resources/EasyEnsembleResults.png)
 
 ### Summary
 If we need to decide which of these examples is best the choice is very clear.  Our results from the Easy Ensemble method (which is a form of boosting) out perform all the rest and it isn't very close.  However, even with these results there still a fundemental flaw shared by them all.  When predicting the outputs of test variables the reliablity (precision) of predicting a high risk case was poor.  This means, more people were labeled high risk than there actually were.  While this output may not be as bad as labeling high risk cases as low risk I believe it would be worth checking out models to see if any of them can score better.
